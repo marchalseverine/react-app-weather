@@ -1,0 +1,13 @@
+.coder {
+    color: whitesmoke;
+    font-family: monospace;
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  .coder a {
+    color: #fff;
+  }
+  .coder a:hover {
+    color: red;
+  }

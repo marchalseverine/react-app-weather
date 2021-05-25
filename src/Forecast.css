@@ -1,0 +1,12 @@
+.forecast .grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  
+  .forecast-temperature {
+    padding-top: 10px;
+  }
+  

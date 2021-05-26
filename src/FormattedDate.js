@@ -1,7 +1,8 @@
 import React from "react";
+import "./FormattedDate.css";
 
 export default function FormattedDate (props){
-    console.log(props.date);
+    
     let days = [
         "Sunday", 
         "Monday", 
@@ -21,7 +22,7 @@ if (minutes < 10 ){
   minutes = `0${minutes}`
 }
 return (
-<div> 
+<div className="current-time"> 
     {day}, {hours}:{minutes}
     </div>
     );

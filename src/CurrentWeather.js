@@ -1,7 +1,7 @@
 
 import React, { useState} from "react";
 import axios from "axios";
-import FormattedDate from "./formattedDate";
+import FormattedDate from "./FormattedDate";
 
 export default function CurrentWeather(props){
   let [dataWeather, setDataWeather] = useState ({ready : false});

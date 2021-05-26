@@ -59,3 +59,14 @@
 .current-description h3 {
   font-size: 30px;
 }
+
+.menu {
+  padding: 8px;
+  text-align: center;
+}
+.button {
+  display: inline;
+  position: relative;
+  left: 110px;
+  bottom: 28px;
+}

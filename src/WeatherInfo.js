@@ -1,5 +1,5 @@
 import React from "react";
-
+import ConvertTemperature from "./ConvertTemperature";
 
 export default function WeatherInfo(props){
     return (
@@ -26,10 +26,8 @@ export default function WeatherInfo(props){
           <span className="weather-temperature" id="temp">
             <p>Temperature</p>
             <h3>
-              <span className="tempC TempF" id="temperature">
-                {props.data.temperature}
-              </span>
-              ºC | ºF
+             
+              <ConvertTemperature celsius={props.data.temperature} />
             </h3>
           </span>
         </div>

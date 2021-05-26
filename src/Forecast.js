@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState} from "react";
 import "./Forecast.css";
 
 
 export default function Forecast (){
+  let [forecast, setForecast] = useState (null);
+
+  
     return (
         <div className="forecast">
           <hr />

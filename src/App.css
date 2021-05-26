@@ -33,6 +33,7 @@
 .current-city h1 {
   text-align: center;
   font-size: 30px;
+  padding-top: 20px;
 }
 
 .current-temp h2 {
@@ -61,8 +62,15 @@
 }
 
 .menu {
-  padding: 8px;
+  margin: 0 auto;
+  display: block;
+  padding: 30px;
   text-align: center;
+}
+
+FormattedDate{
+  padding-top: 30px;
+  padding-left: 30px;
 }
 .button {
   display: inline;

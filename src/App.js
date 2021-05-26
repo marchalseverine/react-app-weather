@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <div className="dashboard">      
-       <CurrentWeather />
+       <CurrentWeather defaultCity="New York"/>
 <Forecast />
 
 

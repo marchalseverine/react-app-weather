@@ -1,7 +1,7 @@
 
 import './App.css';
 import CurrentWeather from "./CurrentWeather";
-import Forecast from "./Forecast";
+
 
 import Footer from "./Footer";
 
@@ -10,10 +10,10 @@ function App() {
     <div className="App">
       <div className="dashboard">      
        <CurrentWeather defaultCity="New York"/>
-      <Forecast />
+      
 
 
-      </div>
+      </div> 
       <Footer />
     </div>
   );

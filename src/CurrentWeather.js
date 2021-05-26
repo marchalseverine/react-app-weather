@@ -3,6 +3,7 @@ import React, { useState} from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
 import WeatherInfo from "./WeatherInfo";
+import Forecast from "./Forecast";
 
 export default function CurrentWeather(props){
   let [dataWeather, setDataWeather] = useState ({ready : false});
@@ -16,8 +17,8 @@ export default function CurrentWeather(props){
       humidity: Math.round(response.data.main.humidity),
       wind:Math.round(response.data.wind.speed),
       description: response.data.weather[0].description,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      coordinates: response.data.coord
     });
   }
   function handleSubmit(event){
@@ -50,7 +51,7 @@ if (dataWeather.ready) {
     </form>
 <WeatherInfo data={dataWeather} />
     
-   
+   <Forecast coords={dataWeather.coordinates} />
       </div>
   );
 } else {

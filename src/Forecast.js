@@ -44,7 +44,7 @@ export default function Forecast (){
           <div className="forecast-temperature">23ºC</div>
         </div>
       </div>
-      <hr />
+     
     </div>
 
     );

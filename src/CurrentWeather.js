@@ -22,21 +22,17 @@ export default function CurrentWeather(props){
 if (dataWeather.ready) {
   return (
   <div className="current-weather">
-   <div className="container">
-     <div className="row">
-     <div className="col-4">
+   
  <FormattedDate date={dataWeather.date} />
-     </div>
-     <div className="col-8">
+  
     <form className="menu">
       <input type="Search"
       placeholder="Enter a city"
       autoFocus="on"/>
       <input type="submit" value= "Search" />
     </form>
-    </div>
-    </div>
-    </div>
+
+    
     <div className="current-city text-center text-capitalize">
         <h1>{dataWeather.city}</h1>
         <h2>{dataWeather.description}</h2>

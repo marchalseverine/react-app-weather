@@ -23,9 +23,7 @@ if (minutes < 10 ){
 }
 return (
 <div className="current-time"> 
-    {day}, 
-    <br />
-    {hours}:{minutes}
+   Last update: {day}, {hours}:{minutes}
     </div>
     );
   

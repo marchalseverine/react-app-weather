@@ -61,6 +61,7 @@ export default function CurrentWeather(){
   function updateCity(event) {
     event.preventDefault();
     setCity(event.target.value);
+
     
   }
   return (
@@ -70,7 +71,6 @@ export default function CurrentWeather(){
         <input type ="submit" value ="Search"/>
       </form>
       {weather}
-
     </div>
   )
 }

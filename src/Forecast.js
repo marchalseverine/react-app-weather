@@ -9,19 +9,20 @@ export default function Forecast (props){
   let [forecastData, setForecastData] = useState (null);
 
   function handleResponseForecast (response){
-    setForecastData(response.data.daily)
+    setForecastData(response.data.daily);
     setLoaded (true);
 
 }
 
 if (loaded){
+  console.log(forecastData);
   return (
   <div className="forecast">
   <hr />
 <div className="grid">
 <div className="day1" id="weather-forecast-day">
-  <p>Tues</p>
-  <span className="icons">🌤</span>
+  <p>{forecastData[0].dt}</p>
+  <span className="icons">{forecast[0].weather[0].icon}</span>
   <br />
   <div className="forecast-temperature">{forecastData[0].temp}ºC</div>
 </div>

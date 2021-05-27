@@ -9,7 +9,6 @@ export default function Forecast (props){
   let [forecastData, setForecastData] = useState (null);
 
   function handleResponseForecast (response){
-    console.log(response.data)
     setForecastData(response.data.daily)
     setLoaded (true);
 

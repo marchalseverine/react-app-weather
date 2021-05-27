@@ -22,7 +22,7 @@ if (loaded){
 <div className="grid">
 <div className="day1" id="weather-forecast-day">
   <p>{forecastData[0].dt}</p>
-  <span className="icons">{forecast[0].weather[0].icon}</span>
+  <span className="icons">{forecastData[0].weather[0].icon}</span>
   <br />
   <div className="forecast-temperature">{forecastData[0].temp}ºC</div>
 </div>

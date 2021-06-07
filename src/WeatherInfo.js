@@ -1,4 +1,5 @@
 import React from "react";
+import WeatherIcon from "./WeatherIcon";
 import ConvertTemperature from "./ConvertTemperature";
 
 export default function WeatherInfo(props){
@@ -7,10 +8,7 @@ export default function WeatherInfo(props){
 <div className="current-city text-center text-capitalize">
         <h1>{props.data.city}</h1>
         <h2>{props.data.description}</h2>
-        <img
-              src={props.data.icon}
-              alt={props.data.description}
-            />
+        <WeatherIcon code={props.data.icon} />
             </div>
             <div className="current-description">
       <div className="grid">

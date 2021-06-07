@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import ForecastDay from "./ForecastDay";
 import "./Forecast.css";
 
 import axios from "axios";
@@ -14,68 +15,27 @@ export default function Forecast (props){
     setLoaded (true);
 }
 
-function day() {
-let date = new Date(forecastData[0].dt);
-let day = date.getDay();
-let days = [
-  "Sun",
-  "Mon",
-  "Tue",
-  "Wed",
-  "Thu",
-  "Fri",
-  "Sat"
-]
-  return days[day];
-}
 
 if (loaded){
   console.log(forecastData);
   return (
-  <div className="forecast">
-  <hr />
-<div className="grid">
-<div className="day1" id="weather-forecast-day">
-  <p>{day()}</p>
-  
-    <img className="icons" src=
-   {props.dataWeather.icon}
-   alt = {props.dataWeather.description} />
+    <div className="forecast-day">
+      <div className ="row">
+        {forecastData.map(function(dailyForecast, index){
 
-  
-  <br />
-  <div className="forecast-temperature">{Math.round(props.dataWeather.temperature)}ºC</div>
-</div>
+if (index < 5){
 
-<div className="day2" id="weather-forecast-day">
-  <p>Wed</p>
-  <span className="icons">🌤</span>
-  <br />
-  <div className="forecast-temperature">{Math.round(forecastData[1].temp.day)}ºC</div>
-</div>
+          return (
+            <div className="col" key ={index}>
 
-<div className="day3" id="weather-forecast-day">
-  <p>Thu</p>
-  <span className="icons">🌤</span>
-  <br />
-  <div className="forecast-temperature">23ºC</div>
-</div>
-<div className="day4" id="weather-forecast-day">
-  <p>Fri</p>
-  <span className="icons">🌤</span>
-  <br />
-  <div className="forecast-temperature">23ºC</div>
-</div>
-
-<div className="day5" id="weather-forecast-day">
-  <p>Sat</p>
-  <span className="icons">🌤</span>
-  <br />
-  <div className="forecast-temperature">23ºC</div>
-</div>
-</div>
-
-</div>
+            <ForecastDay forecastData={dailyForecast} />
+             </div>
+          );
+}
+        })}
+      
+   </div>
+   </div>
   );
 
 } else {

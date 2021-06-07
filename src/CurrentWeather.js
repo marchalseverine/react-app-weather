@@ -51,7 +51,7 @@ if (dataWeather.ready) {
       <input type="submit" value= "Search" />
     </form>
 <WeatherInfo data={dataWeather} />
-    
+    <hr />
    <Forecast coords={dataWeather.coordinates} dataWeather={dataWeather} />
       </div>
   );

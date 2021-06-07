@@ -21,7 +21,6 @@
   margin: 10px auto;
 }
 
-
 .current-city h1 {
   text-align: center;
   font-size: 30px;
@@ -51,6 +50,7 @@
 
 .current-description h3 {
   font-size: 30px;
+  padding-bottom: 10px;
 }
 
 .menu {
@@ -60,10 +60,25 @@
   text-align: center;
 }
 
-
 .button {
   display: inline;
   position: relative;
   left: 110px;
   bottom: 28px;
+}
+
+.container {
+  text-align: center;
+  padding-top: 20px;
+}
+.forecast-temperature {
+  font-size: 16px;
+}
+
+.max-temp {
+  color: #ec6e4c;
+}
+
+.min-temp {
+  color: #e88b74;
 }

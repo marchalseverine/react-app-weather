@@ -9,6 +9,7 @@ export default function CurrentWeather(props){
   let [dataWeather, setDataWeather] = useState ({ready : false});
   const [city, setCity] = useState (props.defaultCity);
   function handleResponse (response){
+    console.log(response.data);
     setDataWeather ({
       ready: true,
       date: new Date(response.data.dt * 1000),
@@ -17,7 +18,7 @@ export default function CurrentWeather(props){
       humidity: Math.round(response.data.main.humidity),
       wind:Math.round(response.data.wind.speed),
       description: response.data.weather[0].description,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       coordinates: response.data.coord
     });
   }
@@ -51,7 +52,7 @@ if (dataWeather.ready) {
     </form>
 <WeatherInfo data={dataWeather} />
     
-   <Forecast coords={dataWeather.coordinates} />
+   <Forecast coords={dataWeather.coordinates} dataWeather={dataWeather} />
       </div>
   );
 } else {

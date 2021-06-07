@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "./Forecast.css";
+
 import axios from "axios";
 
 
@@ -13,6 +14,21 @@ export default function Forecast (props){
     setLoaded (true);
 }
 
+function day() {
+let date = new Date(forecastData[0].dt);
+let day = date.getDay();
+let days = [
+  "Sun",
+  "Mon",
+  "Tue",
+  "Wed",
+  "Thu",
+  "Fri",
+  "Sat"
+]
+  return days[day];
+}
+
 if (loaded){
   console.log(forecastData);
   return (
@@ -20,17 +36,22 @@ if (loaded){
   <hr />
 <div className="grid">
 <div className="day1" id="weather-forecast-day">
-  <p>{forecastData[0].dt}</p>
-  <span className="icons">{forecastData[0].weather[0].icon}</span>
+  <p>{day()}</p>
+  
+    <img className="icons" src=
+   {props.dataWeather.icon}
+   alt = {props.dataWeather.description} />
+
+  
   <br />
-  <div className="forecast-temperature">{forecastData[0].temp}ºC</div>
+  <div className="forecast-temperature">{Math.round(props.dataWeather.temperature)}ºC</div>
 </div>
 
 <div className="day2" id="weather-forecast-day">
   <p>Wed</p>
   <span className="icons">🌤</span>
   <br />
-  <div className="forecast-temperature">23ºC</div>
+  <div className="forecast-temperature">{Math.round(forecastData[1].temp.day)}ºC</div>
 </div>
 
 <div className="day3" id="weather-forecast-day">

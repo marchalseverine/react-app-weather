@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import ForecastDay from "./ForecastDay";
 import "./Forecast.css";
 
@@ -10,6 +10,10 @@ export default function Forecast (props){
   let [loaded, setLoaded] = useState (false);
   let [forecastData, setForecastData] = useState (null);
 
+ useEffect (() =>{
+setLoaded(false);
+ }, [props.coords]);
+
   function handleResponseForecast (response){
     setForecastData(response.data.daily);
     setLoaded (true);
@@ -17,7 +21,6 @@ export default function Forecast (props){
 
 
 if (loaded){
-  console.log(forecastData);
   return (
     <div className="forecast-day">
       <div className ="row">
